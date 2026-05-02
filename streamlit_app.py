@@ -1,69 +1,50 @@
 import streamlit as st
-import requests
+import joblib
+import numpy as np
 
 st.title("🏦 Loan Prediction App")
 
-# -------- INPUT FIELDS --------
+# Load model
+model = joblib.load("artifacts/model.pkl")
 
-no_of_dependents = st.number_input("No of Dependents", min_value=0)
+# Inputs
+no_of_dependents = st.number_input("No of Dependents", 0)
 education = st.selectbox("Education", ["Graduate", "Not Graduate"])
 self_employed = st.selectbox("Self Employed", ["Yes", "No"])
 
-income_annum = st.number_input("Income", min_value=0.0)
-loan_amount = st.number_input("Loan Amount", min_value=0.0)
-loan_term = st.number_input("Loan Term", min_value=0)
+income_annum = st.number_input("Income", 0.0)
+loan_amount = st.number_input("Loan Amount", 0.0)
+loan_term = st.number_input("Loan Term", 0)
 
-cibil_score = st.number_input("CIBIL Score", min_value=300, max_value=900)
-residential_assets_value = st.number_input("Residential Assets", min_value=0.0)
-commercial_assets_value = st.number_input("Commercial Assets", min_value=0.0)
-luxury_assets_value = st.number_input("Luxury Assets", min_value=0.0)
-bank_asset_value = st.number_input("Bank Assets", min_value=0.0)
+cibil_score = st.number_input("CIBIL Score", 300, 900)
+residential_assets_value = st.number_input("Residential Assets", 0.0)
+commercial_assets_value = st.number_input("Commercial Assets", 0.0)
+luxury_assets_value = st.number_input("Luxury Assets", 0.0)
+bank_asset_value = st.number_input("Bank Assets", 0.0)
 
-# -------- BUTTON --------
+# Convert categorical
+education = 1 if education == "Graduate" else 0
+self_employed = 1 if self_employed == "Yes" else 0
 
 if st.button("Predict"):
 
-    # ✅ Better validation
-    if income_annum <= 0 or loan_amount <= 0 or cibil_score <= 0:
-        st.warning("⚠️ Please fill all required fields properly")
+    features = np.array([[
+        no_of_dependents,
+        education,
+        self_employed,
+        income_annum,
+        loan_amount,
+        loan_term,
+        cibil_score,
+        residential_assets_value,
+        commercial_assets_value,
+        luxury_assets_value,
+        bank_asset_value
+    ]])
+
+    prediction = model.predict(features)[0]
+
+    if prediction == 1:
+        st.success("✅ Loan Approved")
     else:
-        url = "http://127.0.0.1:5000/predict"
-
-        data = {
-            "no_of_dependents": int(no_of_dependents),
-            "education": education,
-            "self_employed": self_employed,
-            "income_annum": float(income_annum),
-            "loan_amount": float(loan_amount),
-            "loan_term": int(loan_term),
-            "cibil_score": int(cibil_score),
-            "residential_assets_value": float(residential_assets_value),
-            "commercial_assets_value": float(commercial_assets_value),
-            "luxury_assets_value": float(luxury_assets_value),
-            "bank_asset_value": float(bank_asset_value)
-        }
-
-        try:
-            response = requests.post(url, json=data)
-
-            # ✅ Check status
-            if response.status_code != 200:
-                st.error("❌ API Error")
-                st.stop()
-
-            result = response.json()
-
-            # ✅ Prediction output
-            if "prediction" in result:
-                if result["prediction"] == 1:
-                    st.success("✅ Loan Approved")
-                else:
-                    st.error("❌ Loan Rejected")
-            else:
-                st.error(result.get("error", "Something went wrong"))
-
-        except requests.exceptions.ConnectionError:
-            st.error("❌ Flask API is not running. Please start app.py")
-
-        except Exception as e:
-            st.error(f"Error: {e}")
+        st.error("❌ Loan Rejected")
