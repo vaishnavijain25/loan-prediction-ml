@@ -1,0 +1,9 @@
+2026-05-01 21:19:36,809 - __main__ - INFO - Pipeline started
+2026-05-01 21:19:36,812 - src.components.data_ingestion - INFO - Data loading started
+2026-05-01 21:19:36,979 - src.components.data_ingestion - INFO - Data loaded successfully. Shape: (4269, 13)
+2026-05-01 21:19:36,979 - src.components.data_ingestion - INFO - Columns: ['loan_id', ' no_of_dependents', ' education', ' self_employed', ' income_annum', ' loan_amount', ' loan_term', ' cibil_score', ' residential_assets_value', ' commercial_assets_value', ' luxury_assets_value', ' bank_asset_value', ' loan_status']
+2026-05-01 21:19:36,979 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-05-01 21:19:37,178 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-05-01 21:19:37,178 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-05-01 21:19:37,178 - src.pipeline.data_transformation - ERROR - Error in transformation: "['loan_id'] not found in axis"
+2026-05-01 21:19:37,178 - __main__ - ERROR - Error in pipeline: "['loan_id'] not found in axis"

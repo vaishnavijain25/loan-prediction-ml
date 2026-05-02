@@ -1,0 +1,16 @@
+2026-04-15 02:13:38,727 - __main__ - INFO - Pipeline started
+2026-04-15 02:13:38,727 - src.components.data_ingestion - INFO - Data loading started
+2026-04-15 02:13:38,953 - src.components.data_ingestion - INFO - Data loaded successfully.Shape: (4269, 13)
+2026-04-15 02:13:38,953 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-04-15 02:13:39,033 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-04-15 02:13:39,033 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-04-15 02:13:39,128 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-04-15 02:13:39,128 - src.pipeline.model_trainer - INFO - Model training started
+2026-04-15 02:13:39,138 - src.pipeline.model_trainer - INFO - Training LogisticRegression
+2026-04-15 02:13:39,542 - src.pipeline.model_trainer - INFO - Training Random Forest
+2026-04-15 02:13:40,061 - src.pipeline.model_trainer - INFO - Training Decision Tree
+2026-04-15 02:13:40,095 - src.pipeline.model_trainer - INFO - Training XGBOOST
+2026-04-15 02:13:40,315 - src.pipeline.model_trainer - INFO - Best baseline model found: Random Forest with F1: 0.9716
+2026-04-15 02:13:40,371 - src.pipeline.model_tuner - INFO - Started XGBoost tuning
+2026-04-15 02:13:42,355 - src.pipeline.model_tuner - ERROR - Error in tuning: makedirs() got an unexpected keyword argument 'exists_ok'
+2026-04-15 02:13:42,355 - __main__ - ERROR - Error in pipeline: makedirs() got an unexpected keyword argument 'exists_ok'

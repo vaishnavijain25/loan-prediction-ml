@@ -1,0 +1,18 @@
+2026-04-14 22:01:29,851 - __main__ - INFO - Project started
+2026-04-14 22:01:29,851 - src.components.data_ingestion - INFO - Data loading started
+2026-04-14 22:01:29,861 - src.components.data_ingestion - INFO - Data loaded successfully.Shape: (4269, 13)
+2026-04-14 22:01:29,861 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-04-14 22:01:29,867 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-04-14 22:01:29,867 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-04-14 22:01:29,868 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-04-14 22:01:29,868 - __main__ - INFO - Data pipeline executed successfully
+2026-04-14 22:01:29,868 - src.pipeline.model_trainer - INFO - Model training started
+2026-04-14 22:01:29,879 - src.pipeline.model_trainer - INFO - Training LogisticRegression
+2026-04-14 22:01:29,904 - src.pipeline.model_trainer - INFO - Best baseline model found: LogisticRegression with F1: 0.8744
+2026-04-14 22:01:29,904 - src.pipeline.model_trainer - INFO - Training Random Forest
+2026-04-14 22:01:30,268 - src.pipeline.model_trainer - INFO - Best baseline model found: Random Forest with F1: 0.9716
+2026-04-14 22:01:30,268 - src.pipeline.model_trainer - INFO - Training Decision Tree
+2026-04-14 22:01:30,294 - src.pipeline.model_trainer - INFO - Best baseline model found: Random Forest with F1: 0.9716
+2026-04-14 22:01:30,294 - src.pipeline.model_trainer - INFO - Training XGBOOST
+2026-04-14 22:01:30,381 - src.pipeline.model_trainer - INFO - Best baseline model found: Random Forest with F1: 0.9716
+2026-04-14 22:01:30,392 - __main__ - INFO - Model training pipeline completed

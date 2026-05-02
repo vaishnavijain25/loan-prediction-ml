@@ -1,0 +1,8 @@
+2026-04-12 13:19:12,872 - __main__ - INFO - Project started
+2026-04-12 13:19:12,872 - src.components.data_ingestion - INFO - Data loading started
+2026-04-12 13:19:13,010 - src.components.data_ingestion - INFO - Data loaded successfully.Shape: (4269, 13)
+2026-04-12 13:19:13,010 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-04-12 13:19:13,028 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-04-12 13:19:13,031 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-04-12 13:19:13,045 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-04-12 13:19:13,047 - __main__ - INFO - Data pipeline executed successfully

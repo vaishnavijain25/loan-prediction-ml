@@ -1,0 +1,9 @@
+2026-04-12 21:02:26,995 - __main__ - INFO - Project started
+2026-04-12 21:02:26,995 - src.components.data_ingestion - INFO - Data loading started
+2026-04-12 21:02:27,008 - src.components.data_ingestion - INFO - Data loaded successfully.Shape: (4269, 13)
+2026-04-12 21:02:27,008 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-04-12 21:02:27,012 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-04-12 21:02:27,012 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-04-12 21:02:27,023 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-04-12 21:02:27,024 - __main__ - INFO - Data pipeline executed successfully
+2026-04-12 21:02:27,038 - __main__ - ERROR - Error in pipeline: name 'train_model' is not defined

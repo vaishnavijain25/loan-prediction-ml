@@ -1,0 +1,4 @@
+2026-05-02 07:58:30,458 - __main__ - INFO - Pipeline started
+2026-05-02 07:58:30,458 - src.components.data_ingestion - INFO - Data loading started
+2026-05-02 07:58:30,460 - src.components.data_ingestion - ERROR - Error in data loading: loan.csv not found
+2026-05-02 07:58:30,460 - __main__ - ERROR - Error in pipeline: loan.csv not found

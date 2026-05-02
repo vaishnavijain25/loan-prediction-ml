@@ -1,0 +1,2 @@
+2026-04-12 10:08:28,224 - src.pipeline.data_ingestion - INFO - Data loading started
+2026-04-12 10:08:28,224 - src.pipeline.data_ingestion - ERROR - Error in data loading:name 'pd' is not defined

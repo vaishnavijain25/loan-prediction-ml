@@ -1,0 +1,12 @@
+2026-04-14 22:04:20,646 - __main__ - INFO - Project started
+2026-04-14 22:04:20,646 - src.components.data_ingestion - INFO - Data loading started
+2026-04-14 22:04:20,662 - src.components.data_ingestion - INFO - Data loaded successfully.Shape: (4269, 13)
+2026-04-14 22:04:20,662 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-04-14 22:04:20,671 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-04-14 22:04:20,671 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-04-14 22:04:20,679 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-04-14 22:04:20,679 - __main__ - INFO - Data pipeline executed successfully
+2026-04-14 22:04:20,679 - src.pipeline.model_trainer - INFO - Model training started
+2026-04-14 22:04:20,679 - src.pipeline.model_trainer - INFO - Training LogisticRegression
+2026-04-14 22:04:20,707 - src.pipeline.model_trainer - INFO - Best baseline model found: LogisticRegression with F1: 0.8744
+2026-04-14 22:04:20,718 - __main__ - INFO - Model training pipeline completed

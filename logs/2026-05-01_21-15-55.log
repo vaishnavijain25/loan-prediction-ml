@@ -1,0 +1,4 @@
+2026-05-01 21:16:13,579 - __main__ - INFO - Pipeline started
+2026-05-01 21:16:13,579 - src.components.data_ingestion - INFO - Data loading started
+2026-05-01 21:16:13,579 - src.components.data_ingestion - ERROR - Error in data loading: artifacts\loan.csv not found
+2026-05-01 21:16:13,579 - __main__ - ERROR - Error in pipeline: artifacts\loan.csv not found

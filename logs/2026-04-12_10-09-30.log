@@ -1,0 +1,2 @@
+2026-04-12 10:09:30,723 - src.pipeline.data_ingestion - INFO - Data loading started
+2026-04-12 10:09:30,765 - src.pipeline.data_ingestion - INFO - Data loaded successfully.Shape: (4269, 13)
