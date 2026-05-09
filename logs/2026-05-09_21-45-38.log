@@ -1,0 +1,17 @@
+2026-05-09 21:45:39,720 - __main__ - INFO - Pipeline started
+2026-05-09 21:45:39,720 - src.components.data_ingestion - INFO - Data loading started
+2026-05-09 21:45:39,736 - src.components.data_ingestion - INFO - Data loaded successfully from artifacts\loan.csv
+2026-05-09 21:45:39,736 - src.components.data_ingestion - INFO - Shape: (4269, 13)
+2026-05-09 21:45:39,736 - src.components.data_ingestion - INFO - Columns: ['loan_id', 'no_of_dependents', 'education', 'self_employed', 'income_annum', 'loan_amount', 'loan_term', 'cibil_score', 'residential_assets_value', 'commercial_assets_value', 'luxury_assets_value', 'bank_asset_value', 'loan_status']
+2026-05-09 21:45:39,736 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-05-09 21:45:39,752 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-05-09 21:45:39,752 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-05-09 21:45:39,752 - src.pipeline.data_transformation - INFO - Encoders and feature columns saved
+2026-05-09 21:45:39,770 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-05-09 21:45:39,770 - src.pipeline.model_trainer - INFO - Model training started
+2026-05-09 21:45:39,778 - src.pipeline.model_trainer - INFO - Training LogisticRegression
+2026-05-09 21:45:39,800 - src.pipeline.model_trainer - INFO - Training RandomForest
+2026-05-09 21:45:40,129 - src.pipeline.model_trainer - INFO - Training DecisionTree
+2026-05-09 21:45:40,148 - src.pipeline.model_trainer - INFO - Best model: RandomForest with F1: 0.9850
+2026-05-09 21:45:40,155 - src.pipeline.model_trainer - INFO - Artifacts saved successfully
+2026-05-09 21:45:40,155 - __main__ - INFO - Pipeline completed successfully

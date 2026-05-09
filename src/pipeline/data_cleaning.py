@@ -7,30 +7,30 @@ def clean_data(df):
     try:
         logger.info("Data cleaning started")
 
-        # ✅ remove duplicates
+        # ✅ Remove duplicates
         df = df.drop_duplicates()
 
-        # ✅ strip column names (extra spaces remove)
+        # ✅ Clean column names
         df.columns = df.columns.str.strip()
 
-        # ✅ strip string values ALSO (VERY IMPORTANT)
+        # ✅ Clean string values safely
         for col in df.select_dtypes(include='object').columns:
-            df[col] = df[col].str.strip()
+            df[col] = df[col].astype(str).str.strip()
 
-        # ✅ drop unnecessary column safely
+        # ✅ Drop unnecessary column safely
         if "loan_id" in df.columns:
             df = df.drop("loan_id", axis=1)
 
-        # ✅ handle missing values only if present
+        # ✅ Handle missing values
         if df.isnull().sum().sum() > 0:
 
             num_cols = df.select_dtypes(include=['int64', 'float64']).columns
             cat_cols = df.select_dtypes(include=['object']).columns
 
-            # numeric → median
+            # Numeric → median
             df[num_cols] = df[num_cols].fillna(df[num_cols].median())
 
-            # categorical → mode
+            # Categorical → mode
             df[cat_cols] = df[cat_cols].fillna(df[cat_cols].mode().iloc[0])
 
         logger.info("Data cleaning completed")

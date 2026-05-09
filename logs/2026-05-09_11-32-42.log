@@ -1,0 +1,22 @@
+2026-05-09 11:33:00,408 - __main__ - INFO - Pipeline started
+2026-05-09 11:33:00,408 - src.components.data_ingestion - INFO - Data loading started
+2026-05-09 11:33:00,872 - src.components.data_ingestion - INFO - Data loaded successfully from artifacts\loan.csv
+2026-05-09 11:33:00,872 - src.components.data_ingestion - INFO - Shape: (4269, 13)
+2026-05-09 11:33:00,872 - src.components.data_ingestion - INFO - Columns: ['loan_id', 'no_of_dependents', 'education', 'self_employed', 'income_annum', 'loan_amount', 'loan_term', 'cibil_score', 'residential_assets_value', 'commercial_assets_value', 'luxury_assets_value', 'bank_asset_value', 'loan_status']
+2026-05-09 11:33:00,872 - src.pipeline.data_cleaning - INFO - Data cleaning started
+2026-05-09 11:33:01,012 - src.pipeline.data_cleaning - INFO - Data cleaning completed
+2026-05-09 11:33:01,012 - src.pipeline.data_transformation - INFO - Data transformation started
+2026-05-09 11:33:01,042 - src.pipeline.data_transformation - INFO - Encoders and feature columns saved
+2026-05-09 11:33:01,072 - src.pipeline.data_transformation - INFO - Data transformation completed
+2026-05-09 11:33:01,072 - src.pipeline.model_trainer - INFO - Model training started
+2026-05-09 11:33:01,076 - src.pipeline.model_trainer - INFO - Training LogisticRegression
+2026-05-09 11:33:01,123 - src.pipeline.model_trainer - INFO - Training RandomForest
+2026-05-09 11:33:01,582 - src.pipeline.model_trainer - INFO - Training DecisionTree
+2026-05-09 11:33:01,604 - src.pipeline.model_trainer - INFO - Training XGBoost
+2026-05-09 11:33:01,861 - src.pipeline.model_trainer - INFO - Best baseline model: RandomForest with F1: 0.9850
+2026-05-09 11:33:01,863 - src.pipeline.model_trainer - INFO - Artifacts saved successfully
+2026-05-09 11:33:01,863 - __main__ - INFO - Model comparison completed
+2026-05-09 11:33:01,863 - src.pipeline.model_tuner - INFO - Started XGBoost tuning
+2026-05-09 11:33:05,142 - src.pipeline.model_tuner - INFO - Baseline model selected as final model
+2026-05-09 11:33:05,150 - src.pipeline.model_tuner - INFO - Final model saved successfully
+2026-05-09 11:33:05,150 - __main__ - INFO - Pipeline completed successfully
